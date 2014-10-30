@@ -1,0 +1,5 @@
+CyclicTrain
+A,B,2
+B,C,2
+C,A,1
+C,D,2

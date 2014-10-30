@@ -1,0 +1,4 @@
+FastTrain
+Toronto,Ottawa,31
+Ottawa,Montreal,25
+NYC,Boston,34.2

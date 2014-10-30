@@ -1,0 +1,4 @@
+SwiftRail
+Toronto,Ottawa,30
+Ottawa,Montreal,26
+Boston,NYC,29.3
