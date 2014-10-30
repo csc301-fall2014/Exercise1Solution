@@ -114,7 +114,7 @@ public class MyTripAdvisor {
 		while(currentStation != null && (! visitedStations.contains(toStation))){
 			
 			// Go over all unvisited neighbours, and update the tentative prices
-			for(DirectRoute r : getUnvisitedRoutesFrom(currentStation, visitedStations)){
+			for(DirectRoute r : getRoutesToUnvisitedStations(currentStation, visitedStations)){
 				unvisitedStations.add(r.getToStation());
 				updateTentativePrices(tentativePrices, r);
 			}
@@ -133,11 +133,11 @@ public class MyTripAdvisor {
 	
 
 	private Collection<DirectRoute> getRoutesFrom(String fromStation) {
-		return getUnvisitedRoutesFrom(fromStation, null);
+		return getRoutesToUnvisitedStations(fromStation, null);
 	}
 	
 	
-	private Collection<DirectRoute> getUnvisitedRoutesFrom(String fromStation, Set<String> visitedStations) {
+	private Collection<DirectRoute> getRoutesToUnvisitedStations(String fromStation, Set<String> visitedStations) {
 		Collection<DirectRoute> routes = new HashSet<DirectRoute>();
 		for(TrainCompany c : trainCompanies){
 			for(DirectRoute r : c.getDirectRoutesFrom(fromStation)){
