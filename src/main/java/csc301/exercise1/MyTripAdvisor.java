@@ -98,10 +98,13 @@ public class MyTripAdvisor {
 	/**
 	 * Pre-condition: fromStation and toStation are two different valid 
 	 * station names without trailing spaces.
+	 * @return A map that associates station names with prices, such that:
+	 *   1. If the key s has value p, then p is the cheapest price of a trip from fromStation to s.
+	 *   2. If there is a trip from fromStation to toStation, then the returned map contains the key toStation.
 	 */
 	private Map<String, Double> computePrices(String fromStation, String toStation){
 		
-		// Dijkstra's algorithm implementation ...
+		// Dijkstra's algorithm implementation (stopping as soon as we find the cheapest trip to toStation) ...
 		
 		// Set up data structures
 		Map<String, Double> tentativePrices = new HashMap<String, Double>();
